@@ -31,7 +31,7 @@ describe('Unliking A Movie', () => {
     it('should be able to remove liked movie from the list', async () => {
         await TestFactories.createLikeButtonPresenterWithMovie({ id: 1 });
 
-        document.querySelector('[aria-label="unlike this movie"').click();
+        document.querySelector('[aria-label="unlike this movie"]').click();
 
         expect(await FavoriteMovieIdb.getAllMovies()).toEqual([]);
     });
@@ -42,7 +42,7 @@ describe('Unliking A Movie', () => {
         // Menghapus film dari indexeddb
         await FavoriteMovieIdb.deleteMovie(1);
 
-        document.querySelector('[aria-label="unlike this movie"').click();
+        document.querySelector('[aria-label="unlike this movie"]').click();
 
         expect(await FavoriteMovieIdb.getAllMovies()).toEqual([]);
     });
